@@ -1,12 +1,12 @@
 import { Route, Routes } from "react-router-dom";
-import { HomePage } from "./components/pages/HomePage";
+import { TopPage } from "./components/pages/TopPage";
 
 function App() {
   return (
     <div className="App">
       <h1>React App</h1>
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<TopPage />} />
       </Routes>
     </div>
   );
