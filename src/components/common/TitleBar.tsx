@@ -8,12 +8,21 @@ export const TitleBar = () => {
   return (
     <>
       <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static" color="primary">
+        <AppBar
+          position="static"
+          color="inherit"
+          sx={{ backgroundColor: "white" }}
+        >
           <Toolbar>
             <Typography
               variant="h4"
               component="div"
-              sx={{ flexGrow: 1, textAlign: "center", cursor: "pointer" }}
+              sx={{
+                flexGrow: 1,
+                textAlign: "center",
+                cursor: "pointer",
+                color: "black",
+              }}
               onClick={() => {
                 window.location.href = "/";
               }}
