@@ -7,7 +7,19 @@ import { MyGradationButton } from "../../common/MyGradationButton";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 
 export const CreateAccount = () => {
-  const [page, setPage] = useState<number>(3);
+  const [page, setPage] = useState<number>(1);
+
+  const goToTopPage = () => {
+    window.location.href = "/";
+  };
+
+  const nextPage = () => {
+    setPage(page + 1);
+  };
+
+  const prevPage = () => {
+    setPage(page - 1);
+  };
 
   if (page === 1) {
     return (
@@ -54,12 +66,12 @@ export const CreateAccount = () => {
                 <MyGradationButton
                   variant="primary"
                   buttonText="次へ"
-                  onClickFunc={() => alert("ボタンが押されました")}
+                  onClickFunc={() => nextPage()}
                 />
                 <MyGradationButton
                   variant="secondary"
                   buttonText="戻る"
-                  onClickFunc={() => alert("ボタンが押されました")}
+                  onClickFunc={() => goToTopPage()}
                 />
               </Stack>
             </Box>
@@ -109,12 +121,12 @@ export const CreateAccount = () => {
                 <MyGradationButton
                   variant="primary"
                   buttonText="登録する"
-                  onClickFunc={() => alert("ボタンが押されました")}
+                  onClickFunc={() => nextPage()}
                 />
                 <MyGradationButton
                   variant="secondary"
                   buttonText="戻る"
-                  onClickFunc={() => alert("ボタンが押されました")}
+                  onClickFunc={() => prevPage()}
                 />
               </Stack>
             </Box>
