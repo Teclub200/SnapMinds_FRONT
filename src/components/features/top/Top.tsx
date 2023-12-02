@@ -1,8 +1,7 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Stack } from "@mui/material";
 
 import CameraAltIcon from "@mui/icons-material/CameraAlt";
-import { Button } from "@mui/joy";
-import { MySimpleButton } from "../../common/MySimpleButton";
+import { MyGradationButton } from "../../common/MyGradationButton";
 
 export const Top = () => {
   return (
@@ -36,11 +35,20 @@ export const Top = () => {
           >
             写真のスキルを学ぶ・共有する
           </Typography>
-          <MySimpleButton
-            variant="solid"
-            buttonText="ログイン"
-            onClickFunc={() => alert("ボタンが押されました")}
-          />
+          <Box sx={{ flexGrow: 1, marginTop: "10%" }}>
+            <Stack direction="column" spacing={2}>
+              <MyGradationButton
+                variant="primary"
+                buttonText="ログイン"
+                onClickFunc={() => alert("ボタンが押されました")}
+              />
+              <MyGradationButton
+                variant="secondary"
+                buttonText="新規登録"
+                onClickFunc={() => alert("ボタンが押されました")}
+              />
+            </Stack>
+          </Box>
         </Box>
       </Box>
     </div>
