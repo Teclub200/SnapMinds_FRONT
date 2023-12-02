@@ -38,6 +38,7 @@ export const Top = () => {
           </Typography>
           <MySimpleButton
             variant="solid"
+            buttonText="ログイン"
             onClickFunc={() => alert("ボタンが押されました")}
           />
         </Box>
