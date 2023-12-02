@@ -4,6 +4,10 @@ import CameraAltIcon from "@mui/icons-material/CameraAlt";
 import { MyGradationButton } from "../../common/MyGradationButton";
 
 export const Top = () => {
+  const goToCreateAccountPage = () => {
+    window.location.href = "/create-account";
+  };
+
   return (
     <div>
       <Box sx={{ flexGrow: 1, backgroundColor: "#999999" }}>
@@ -45,7 +49,7 @@ export const Top = () => {
               <MyGradationButton
                 variant="secondary"
                 buttonText="新規登録"
-                onClickFunc={() => alert("ボタンが押されました")}
+                onClickFunc={() => goToCreateAccountPage()}
               />
             </Stack>
           </Box>
