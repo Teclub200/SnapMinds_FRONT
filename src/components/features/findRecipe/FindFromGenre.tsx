@@ -2,6 +2,8 @@ import { Genre } from "../../types/genre";
 import { Typography, Stack } from "@mui/material";
 import { Card, CardOverflow, AspectRatio, CardContent } from "@mui/joy";
 
+import { Link } from "react-router-dom";
+
 export const FindFromGenre = () => {
   const sampleGenreList: Genre[] = [
     {
@@ -34,31 +36,37 @@ export const FindFromGenre = () => {
     <div>
       <Stack direction="column" spacing={2}>
         {sampleGenreList.map((genre) => (
-          <Card
-            orientation="horizontal"
-            sx={{
-              width: "90%",
-              margin: "auto",
-              backgroundColor: "#ffffff",
-              cursor: "pointer",
-            }}
+          <Link
+            to={"/recipe-list"}
+            state={{ genreId: genre.id }}
+            style={{ borderStyle: "none" }}
           >
-            <CardOverflow>
-              <AspectRatio ratio="1" sx={{ width: 90 }}>
-                <img
-                  src="https://images.unsplash.com/photo-1507833423370-a126b89d394b?auto=format&fit=crop&w=90"
-                  srcSet="https://images.unsplash.com/photo-1507833423370-a126b89d394b?auto=format&fit=crop&w=90&dpr=2 2x"
-                  loading="lazy"
-                  alt=""
-                />
-              </AspectRatio>
-            </CardOverflow>
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                {genre.genre}
-              </Typography>
-            </CardContent>
-          </Card>
+            <Card
+              orientation="horizontal"
+              sx={{
+                width: "90%",
+                margin: "auto",
+                backgroundColor: "#ffffff",
+                cursor: "pointer",
+              }}
+            >
+              <CardOverflow>
+                <AspectRatio ratio="1" sx={{ width: 90 }}>
+                  <img
+                    src="https://images.unsplash.com/photo-1507833423370-a126b89d394b?auto=format&fit=crop&w=90"
+                    srcSet="https://images.unsplash.com/photo-1507833423370-a126b89d394b?auto=format&fit=crop&w=90&dpr=2 2x"
+                    loading="lazy"
+                    alt=""
+                  />
+                </AspectRatio>
+              </CardOverflow>
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
+                  {genre.genre}
+                </Typography>
+              </CardContent>
+            </Card>
+          </Link>
         ))}
       </Stack>
     </div>
