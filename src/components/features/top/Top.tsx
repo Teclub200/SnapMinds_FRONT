@@ -1,6 +1,8 @@
 import { Box, Typography } from "@mui/material";
 
 import CameraAltIcon from "@mui/icons-material/CameraAlt";
+import { Button } from "@mui/joy";
+import { MySimpleButton } from "../../common/MySimpleButton";
 
 export const Top = () => {
   return (
@@ -34,6 +36,10 @@ export const Top = () => {
           >
             写真のスキルを学ぶ・共有する
           </Typography>
+          <MySimpleButton
+            variant="solid"
+            onClickFunc={() => alert("ボタンが押されました")}
+          />
         </Box>
       </Box>
     </div>
