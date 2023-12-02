@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import { Box, Typography, Stack } from "@mui/material";
-import { Input } from "@mui/joy";
+import { Input, Alert } from "@mui/joy";
 import { MyGradationButton } from "../../common/MyGradationButton";
 
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
@@ -13,6 +13,19 @@ export const CreateAccount = () => {
   const [password, setPassword] = useState<string>("");
   const [userName, setUserName] = useState<string>("");
   const [authCode, setAuthCode] = useState<string>("");
+
+  const [errorText, setErrorText] = useState<string>("");
+  const [errorTextShow, setErrorTextShow] = useState<boolean>(false);
+
+  const inputValidation = () => {
+    if (email == "" || password == "" || userName == "") {
+      setErrorText("入力されていない項目があります。");
+      setErrorTextShow(true);
+    } else {
+      setErrorTextShow(false);
+      nextPage();
+    }
+  };
 
   const goToTopPage = () => {
     window.location.href = "/";
@@ -91,12 +104,17 @@ export const CreateAccount = () => {
                   placeholder="ユーザー名"
                   onChange={(e) => setUserName(e.target.value)}
                 />
+                {errorTextShow && (
+                  <Alert color="danger" variant="outlined">
+                    {errorText}
+                  </Alert>
+                )}
               </Stack>
               <Stack direction="column" spacing={2} sx={{ padding: "20px" }}>
                 <MyGradationButton
                   variant="primary"
                   buttonText="次へ"
-                  onClickFunc={() => nextPage()}
+                  onClickFunc={() => inputValidation()}
                 />
                 <MyGradationButton
                   variant="secondary"
