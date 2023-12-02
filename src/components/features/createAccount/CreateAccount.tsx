@@ -30,6 +30,10 @@ export const CreateAccount = () => {
     window.location.href = "/";
   };
 
+  const goToFindPage = () => {
+    window.location.href = "/find";
+  };
+
   const nextPage = () => {
     setPage(page + 1);
   };
@@ -150,7 +154,7 @@ export const CreateAccount = () => {
                 <MyGradationButton
                   variant="primary"
                   buttonText="始める"
-                  onClickFunc={() => testDisp()}
+                  onClickFunc={() => goToFindPage()}
                 />
               </Stack>
             </Box>
