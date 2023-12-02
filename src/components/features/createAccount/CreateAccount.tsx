@@ -96,7 +96,7 @@ export const CreateAccount = () => {
               <Stack direction="column" spacing={2} sx={{ padding: "20px" }}>
                 <MyGradationButton
                   variant="primary"
-                  buttonText="次へ"
+                  buttonText="登録する"
                   onClickFunc={() => inputValidation()}
                 />
                 <MyGradationButton
