@@ -4,8 +4,10 @@ import { Box, Typography, Stack } from "@mui/material";
 import { Input } from "@mui/joy";
 import { MyGradationButton } from "../../common/MyGradationButton";
 
+import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
+
 export const CreateAccount = () => {
-  const [page, setPage] = useState<number>(2);
+  const [page, setPage] = useState<number>(3);
 
   if (page === 1) {
     return (
@@ -112,6 +114,58 @@ export const CreateAccount = () => {
                 <MyGradationButton
                   variant="secondary"
                   buttonText="戻る"
+                  onClickFunc={() => alert("ボタンが押されました")}
+                />
+              </Stack>
+            </Box>
+          </Box>
+        </Box>
+      </div>
+    );
+  } else if (page === 3) {
+    return (
+      <div>
+        <Box sx={{ flexGrow: 1, backgroundColor: "#999999" }}>
+          <Box
+            sx={{
+              width: "80%",
+              height: "100vh",
+              margin: "auto",
+              paddingTop: "10%",
+              textAlign: "center",
+            }}
+          >
+            <Typography
+              variant="h3"
+              component="div"
+              sx={{ flexGrow: 1, color: "#ffffff" }}
+            >
+              登録完了
+            </Typography>
+            <Box
+              sx={{
+                flexGrow: 1,
+                marginTop: "10%",
+                width: "90%",
+                marginLeft: "auto",
+                marginRight: "auto",
+                height: "auto",
+                background: "rgba(255, 255, 255, 0.5)",
+                borderRadius: "30px",
+              }}
+            >
+              <Typography variant="h5" component="div" sx={{ padding: "20px" }}>
+                登録が完了しました。
+              </Typography>
+              <Box sx={{ flexGrow: 1, marginTop: "10%" }}>
+                <Typography variant="h1">
+                  <CheckCircleOutlineIcon sx={{ fontSize: 100 }} />
+                </Typography>
+              </Box>
+              <Stack direction="column" spacing={2} sx={{ padding: "20px" }}>
+                <MyGradationButton
+                  variant="primary"
+                  buttonText="始める"
                   onClickFunc={() => alert("ボタンが押されました")}
                 />
               </Stack>
