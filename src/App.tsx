@@ -7,6 +7,7 @@ import { RecipeDetailPage } from "./components/pages/RecipeDetailPage";
 import { PostRecipePage } from "./components/pages/PostRecipePage";
 
 import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { TitleBar } from "./components/common/TitleBar";
 
 //カラーテーマの設定
 const theme = createTheme({
@@ -25,6 +26,7 @@ function App() {
     <>
       <ThemeProvider theme={theme}>
         <div className="App">
+          <TitleBar />
           <Routes>
             <Route path="/" element={<TopPage />} />
             <Route path="/login" element={<LoginPage />} />
