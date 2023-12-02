@@ -9,6 +9,11 @@ import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 export const CreateAccount = () => {
   const [page, setPage] = useState<number>(1);
 
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [userName, setUserName] = useState<string>("");
+  const [authCode, setAuthCode] = useState<string>("");
+
   const goToTopPage = () => {
     window.location.href = "/";
   };
@@ -19,6 +24,22 @@ export const CreateAccount = () => {
 
   const prevPage = () => {
     setPage(page - 1);
+  };
+
+  const testDisp = () => {
+    alert(
+      "email: " +
+        email +
+        "\n" +
+        "password: " +
+        password +
+        "\n" +
+        "userName: " +
+        userName +
+        "\n" +
+        "authCode: " +
+        authCode
+    );
   };
 
   if (page === 1) {
@@ -54,13 +75,22 @@ export const CreateAccount = () => {
               }}
             >
               <Stack direction="column" spacing={2} sx={{ padding: "20px" }}>
-                <Input variant="soft" placeholder="メールアドレス" />
+                <Input
+                  variant="soft"
+                  placeholder="メールアドレス"
+                  onChange={(e) => setEmail(e.target.value)}
+                />
                 <Input
                   variant="soft"
                   placeholder="パスワード"
                   type="password"
+                  onChange={(e) => setPassword(e.target.value)}
                 />
-                <Input variant="soft" placeholder="ユーザー名" />
+                <Input
+                  variant="soft"
+                  placeholder="ユーザー名"
+                  onChange={(e) => setUserName(e.target.value)}
+                />
               </Stack>
               <Stack direction="column" spacing={2} sx={{ padding: "20px" }}>
                 <MyGradationButton
@@ -115,7 +145,11 @@ export const CreateAccount = () => {
                 届いたメールに記載されている認証コードを入力してください。
               </Typography>
               <Stack direction="column" spacing={2} sx={{ padding: "20px" }}>
-                <Input variant="soft" placeholder="認証コード" />
+                <Input
+                  variant="soft"
+                  placeholder="認証コード"
+                  onChange={(e) => setAuthCode(e.target.value)}
+                />
               </Stack>
               <Stack direction="column" spacing={2} sx={{ padding: "20px" }}>
                 <MyGradationButton
@@ -178,7 +212,7 @@ export const CreateAccount = () => {
                 <MyGradationButton
                   variant="primary"
                   buttonText="始める"
-                  onClickFunc={() => alert("ボタンが押されました")}
+                  onClickFunc={() => testDisp()}
                 />
               </Stack>
             </Box>
