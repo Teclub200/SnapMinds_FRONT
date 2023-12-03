@@ -16,8 +16,6 @@ interface FormData {
 }
 
 export const PostRecipe = () => {
-  const [recipe, setRecipe] = useState("");
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // フォームの送信処理を実装する
