@@ -19,8 +19,8 @@ export const RecipeDetail = () => {
     genreId: 1,
   };
 
-  const genreName: string = "春";
-  const userName: string = "ユーザー名";
+  const genreName: string = "春"; //仮で入れています。
+  const userName: string = "ユーザー名"; //仮で入れています。
 
   return (
     <div>
