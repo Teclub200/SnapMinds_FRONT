@@ -1,7 +1,7 @@
 import { Box, Typography, Grid } from "@mui/material";
 
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import { Recipe } from "../../common/types/recipe";
+import { Recipe } from "../../types/recipe";
 
 export const RecipeDetail = () => {
   const recipeData: Recipe = {
