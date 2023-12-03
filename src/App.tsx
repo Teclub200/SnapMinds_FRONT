@@ -5,6 +5,7 @@ import { CreateAccountPage } from "./components/pages/CreateAccountPage";
 import { FindRecipePage } from "./components/pages/FindRecipePage";
 import { RecipeDetailPage } from "./components/pages/RecipeDetailPage";
 import { PostRecipePage } from "./components/pages/PostRecipePage";
+import { RecipeListPage } from "./components/pages/RecipeListPage";
 
 import { TitleBar } from "./components/common/TitleBar";
 
@@ -18,7 +19,7 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/create-account" element={<CreateAccountPage />} />
           <Route path="/find" element={<FindRecipePage />} />
-          <Route path="/recipe-list" element={<FindRecipePage />} />
+          <Route path="/recipe-list" element={<RecipeListPage />} />
           <Route path="/recipe-detail" element={<RecipeDetailPage />} />
           <Route path="/post" element={<PostRecipePage />} />
         </Routes>
