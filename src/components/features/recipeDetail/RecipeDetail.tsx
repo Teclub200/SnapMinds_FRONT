@@ -1,8 +1,27 @@
 import { Box, Typography, Grid } from "@mui/material";
 
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import { Recipe } from "../../common/types/recipe";
 
 export const RecipeDetail = () => {
+  const recipeData: Recipe = {
+    id: 1,
+    title: "ここにタイトルが入ります",
+    description: "ここに簡単な説明が入ります。",
+    process: [
+      "ここに手順1が入ります。ここに手順1が入ります。ここに手順1が入ります。",
+      "ここに手順2が入ります。ここに手順2が入ります。ここに手順2が入ります。",
+      "ここに手順3が入ります。ここに手順3が入ります。ここに手順3が入ります。",
+      "ここに手順4が入ります。ここに手順3が入ります。ここに手順3が入ります。",
+    ],
+    advice: "ここにアドバイスが入ります。",
+    deviceUsed: "ここに撮影デバイス名が入ります。",
+    genreId: 1,
+  };
+
+  const genreName: string = "春";
+  const userName: string = "ユーザー名";
+
   return (
     <div>
       <Box sx={{ flexGrow: 1, marginTop: "20px" }}>
@@ -23,11 +42,11 @@ export const RecipeDetail = () => {
           }}
         >
           <Typography variant="h4" component="div" sx={{ fontWeight: "bold" }}>
-            ここにタイトルが入ります
+            {recipeData.title}
           </Typography>
           <Typography variant="h6" component="div">
             <AccountCircleIcon fontSize="medium" />
-            作成者
+            {userName}
           </Typography>
           <Box
             sx={{
@@ -38,7 +57,7 @@ export const RecipeDetail = () => {
             }}
           >
             <Typography variant="h5" component="div">
-              ここに簡単な説明が入ります。
+              {recipeData.description}
             </Typography>
           </Box>
           <Typography
@@ -48,29 +67,31 @@ export const RecipeDetail = () => {
           >
             手順
           </Typography>
-          <Grid container spacing={2} sx={{ marginTop: "5px" }}>
-            <Grid item xs={3}>
-              <Typography
-                variant="h3"
-                component="div"
-                sx={{
-                  color: "#FFFFFF",
-                  fontWeight: "bold",
-                  textAlign: "center",
-                  backgroundColor: "#62bee3",
-                  width: "70px",
-                  height: "50px",
-                }}
-              >
-                1
-              </Typography>
+          {recipeData.process.map((process, index) => (
+            <Grid container spacing={2} sx={{ marginTop: "5px" }}>
+              <Grid item xs={3}>
+                <Typography
+                  variant="h3"
+                  component="div"
+                  sx={{
+                    color: "#FFFFFF",
+                    fontWeight: "bold",
+                    textAlign: "center",
+                    backgroundColor: "#62bee3",
+                    width: "70px",
+                    height: "50px",
+                  }}
+                >
+                  {index + 1}
+                </Typography>
+              </Grid>
+              <Grid item xs={9}>
+                <Typography variant="h5" component="div">
+                  {process}
+                </Typography>
+              </Grid>
             </Grid>
-            <Grid item xs={9}>
-              <Typography variant="h5" component="div">
-                手順の説明が入ります。手順の説明が入ります。手順の説明が入ります。手順の説明が入ります。手順の説明が入ります。手順の説明が入ります。手順の説明が入ります。
-              </Typography>
-            </Grid>
-          </Grid>
+          ))}
           <Typography
             variant="h4"
             component="div"
@@ -79,7 +100,7 @@ export const RecipeDetail = () => {
             アドバイス
           </Typography>
           <Typography variant="h5" component={"div"} sx={{ marginTop: "5px" }}>
-            アドバイスの説明が入ります。アドバイスの説明が入ります。アドバイスの説明が入ります。アドバイスの説明が入ります。アドバイスの説明が入ります。アドバイスの説明が入ります。
+            {recipeData.advice}
           </Typography>
           <Typography
             variant="h4"
@@ -89,7 +110,7 @@ export const RecipeDetail = () => {
             撮影デバイス
           </Typography>
           <Typography variant="h5" component={"div"} sx={{ marginTop: "5px" }}>
-            撮影デバイス名が入ります。
+            {recipeData.deviceUsed}
           </Typography>
           <Typography
             variant="h4"
@@ -113,7 +134,7 @@ export const RecipeDetail = () => {
             component={"div"}
             sx={{ marginTop: "5px", marginBottom: "30px" }}
           >
-            ジャンルが入ります。
+            {genreName}
           </Typography>
         </Box>
       </Box>
