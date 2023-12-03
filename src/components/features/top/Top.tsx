@@ -8,6 +8,10 @@ export const Top = () => {
     window.location.href = "/create-account";
   };
 
+  const goToLoginPage = () => {
+    window.location.href = "/login";
+  };
+
   return (
     <div>
       <Box sx={{ flexGrow: 1, backgroundColor: "#999999" }}>
@@ -44,7 +48,7 @@ export const Top = () => {
               <MyGradationButton
                 variant="primary"
                 buttonText="ログイン"
-                onClickFunc={() => alert("ボタンが押されました")}
+                onClickFunc={() => goToLoginPage()}
               />
               <MyGradationButton
                 variant="secondary"
